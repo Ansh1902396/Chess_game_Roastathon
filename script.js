@@ -11,24 +11,19 @@ document.addEventListener('DOMContenLoaded', ()=>{
         if(game.game_over()){
             alert("Checkmate");
         }else{
-            const randomIdx=Math.floor(Math.random()) *
+            const randomIdx=Math.floor(Math.random()  *
             possibleMoves.length);
             const move = possibleMoves[randomIdx];
             game.move(move);
             board.position(game.fen());
             recordMove(move, moveCount);
             moveCount++;
-
-
-
-
           }
         };
         
         const recordMove = (move,count) => {
-            const formattedMove = count % 2 === 1? '$(Math.ceil
-               (count / 2)}. ${move}' : '${move} -';
-               moveHistroy.textContent += formattedMove + ' ';
+            const formattedMove = count % 2 === 1? '${Math.ceil(count / 2)}. ${move}' : '${move} -';
+               moveHistory.textContent += formattedMove + ' ';
                moveHistory.scrollTop = moveHistory,scrollHeight;
        
 
@@ -63,7 +58,42 @@ document.addEventListener('DOMContenLoaded', ()=>{
         onDrop,
         onSnapEnd,
         moveSpeed: 'fast',
-        
-      }
+        snapBackSpeed: 500,
+        snapSpeed: 100,
+      };
 
-}
+      board = Chessboard('board', boardConfig);
+
+      document.querySelector('.play-again').addEventListener
+      ('click', () => {
+        game.reset();
+        board.start();
+        moveHistory.textContent ='';
+        moveCount = 1;
+        userColor = 'w';
+      });
+
+      document.querySelector('.set-pos').addEventListener
+      ('click', () =>{
+            const fen = prompt("Enter the FEN notation for the desired position!");
+            if(fen !== null){
+                 if (game.load(fen)){
+                    board.position(fen);
+                    moveHistory.textContent ='';
+                    moveCount = 1;
+                    userColor = 'w';
+                 }else {
+                    alert("Invalid FEN notation. Please try again.");
+                 }
+            }
+             
+      });
+
+      document.querySelector('.flip-board').addEventListener
+      ('click', () =>{
+            board.flip();
+            makeRandomMove;
+            userColor = userColor === 'w' ? 'b' : 'w';
+      });
+
+});
