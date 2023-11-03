@@ -1,0 +1,114 @@
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    animation: backgroundAnimation 10s infinite alternate;
+}
+
+h1 {
+    font-size: 36px;
+    animation: scaleUp 2s ease-in-out infinite alternate;
+}
+
+p {
+    font-size: 18px;
+    animation: fadeIn 2s ease-in-out 1s;
+}
+
+#play-button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    animation: pulse 1.5s infinite alternate;
+}
+
+#play-button:hover {
+    background-color: #2980b9;
+} */
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    animation: backgroundAnimation 10s infinite alternate;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out 1s;
+}
+
+.title {
+    font-size: 36px;
+    animation: scaleUp 2s ease-in-out infinite alternate;
+}
+
+.content {
+    font-size: 18px;
+}
+
+#play-button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    animation: pulse 1.5s infinite alternate;
+}
+
+#play-button:hover {
+    background-color: #2980b9;
+}
+
+@keyframes backgroundAnimation {
+    from {
+        background-color: #000;
+    }
+    to {
+        background-color: #111;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
