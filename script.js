@@ -81,19 +81,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Event listener for the "Set Position" button
-  document.querySelector('.set-pos').addEventListener('click', () => {
-      const fen = prompt("Enter the FEN notation for the desired position!");
-      if (fen !== null) {
-          if (game.load(fen)) {
-              board.position(fen);
-              moveHistory.textContent = '';
-              moveCount = 1;
-              userColor = 'w';
-          } else {
-              alert("Invalid FEN notation. Please try again.");
-          }
-      }
-  });
+//   document.querySelector('.set-pos').addEventListener('click', () => {
+//       const fen = prompt("Enter the FEN notation for the desired position!");
+//       if (fen !== null) {
+//           if (game.load(fen)) {
+//               board.position(fen);
+//               moveHistory.textContent = '';
+//               moveCount = 1;
+//               userColor = 'w';
+//           } else {
+//               alert("Invalid FEN notation. Please try again.");
+//           }
+//       }
+//   });
 
   // Event listener for the "Flip Board" button
   document.querySelector('.flip-board').addEventListener('click', () => {
