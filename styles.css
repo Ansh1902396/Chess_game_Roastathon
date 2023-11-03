@@ -8,14 +8,18 @@
 }
 
 body{
+    background-image: url('fin2.jpg');
+    background-size : auto;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #f2f2f2;
+    background-repeat:round;
 }
 
 .container{
+  
     background-color: #fff;
     padding: 3rem;
     border-radius: 10px;
